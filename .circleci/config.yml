@@ -31,7 +31,7 @@ jobs:
 
       - deploy:
           command: |
-            git config user.email "circleci@yourdomain.com"
+            git config user.email "circleci@poifuture.com"
             git config user.name "Circle CI"
             git add --all
             # Avoid commit nothing
