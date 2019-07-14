@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "golink-gh-pages": "^1.20190714.4",
+    "serve": "^11.1.0"
+  },
+  "scripts": {
+    "build": "golink",
+    "start": "npm build && serve docs"
+  },
+  "name": "gopublic.poifuture.com",
+  "description": "golink for poi.page/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poifuture/gopublic.poifuture.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poifuture/gopublic.poifuture.com/issues"
+  },
+  "homepage": "https://github.com/poifuture/gopublic.poifuture.com#readme"
+}

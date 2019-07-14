@@ -1,0 +1,36 @@
+---
+permalink: /404.html
+---
+<script>
+  var key = location.pathname.match(/^[/]([^/?]*)[/]?.*$/)[1]
+  var remain = location.href.substring(location.origin.length + key.length + 1)
+  if (remain.startsWith("/")) {
+    remain = remain.substring(1)
+  }
+  if (key === "") {
+    location = "https://github.com/poifuture/golink-gh-pages/"
+  } else {
+    /* fuzzy start */
+    key = key.replace(/[^a-zA-Z0-9]*/g, "").toLowerCase()
+    /* fuzzy end */
+    console.log("input: ", key, remain)
+    fetch("/entry/" + key)
+      .then(function(response) {
+        if (!response.ok) {
+          throw response
+        }
+        return response.text()
+      })
+      .then(function(text) {
+        console.log("target: ", text)
+        location = text + remain
+      })
+      .catch(function(error) {
+        console.error(error)
+        /*  */
+        document.getElementById("message").innerText =
+          "Entry " + key + " not found."
+      })
+  }
+</script>
+<span id="message">Jumping...</span>
